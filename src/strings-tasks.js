@@ -241,8 +241,10 @@ function formatTime(minutes, seconds) {
  *   reverseString('abcdef') => 'fedcba'
  *   reverseString('12345') => '54321'
  */
-function reverseString(/* str */) {
-  throw new Error('Not implemented');
+function reverseString(str) {
+  const mas = str.split('');
+  mas.reverse();
+  return mas.join('');
 }
 
 /**
@@ -256,8 +258,10 @@ function reverseString(/* str */) {
  *   orderAlphabetically('textbook') => 'bekoottx'
  *   orderAlphabetically('abc123xyz') => '123abcxyz'
  */
-function orderAlphabetically(/* str */) {
-  throw new Error('Not implemented');
+function orderAlphabetically(str) {
+  const mas = str.split('');
+  mas.sort();
+  return mas.join('');
 }
 
 /**
@@ -272,8 +276,8 @@ function orderAlphabetically(/* str */) {
  *   containsSubstring('JavaScript is Fun', 'Python') => false
  *   containsSubstring('12345', '34') => true
  */
-function containsSubstring(/* str, substring */) {
-  throw new Error('Not implemented');
+function containsSubstring(str, substring) {
+  return str.includes(substring);
 }
 
 /**
@@ -307,8 +311,14 @@ function countVowels(/* str */) {
  *   isPalindrome('apple') => false
  *   isPalindrome('No lemon, no melon') => true
  */
-function isPalindrome(/* str */) {
-  throw new Error('Not implemented');
+function isPalindrome(str) {
+  const validChars = 'abcdefghijklmnopqrstuvwxyz0123456789';
+  const lowerStr = str.toLowerCase().split('');
+  const cleanStr = lowerStr
+    .filter((char) => validChars.includes(char))
+    .join('');
+  const palindrome = cleanStr.split('').reverse().join('');
+  return cleanStr === palindrome;
 }
 
 /**
